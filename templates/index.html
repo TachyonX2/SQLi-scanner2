@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQL Injection Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="terminal-box">
+            <h2>About SQL Injection</h2>
+            <p>SQL Injection (SQLi) is a vulnerability that allows attackers to interfere with queries that an application makes to its database.</p>
+            <p>This scanner sends various payloads to check for vulnerable parameters.</p>
+        </div>
+
+        <form method="POST">
+            <input type="text" name="url" placeholder="Enter a URL with ?param=1" required>
+            <select name="category">
+                <option value="all">All Categories</option>
+                <option value="classic">Classic</option>
+                <option value="boolean-based">Boolean-Based</option>
+                <option value="time-based">Time-Based</option>
+                <option value="union-based">Union-Based</option>
+                <option value="data extraction">Data Extraction</option>
+                <option value="mssql">MSSQL</option>
+                <option value="postgresql">PostgreSQL</option>
+                <option value="group concat">Group Concat</option>
+                <option value="information_schema">Information Schema</option>
+            </select>
+            <button type="submit">Scan</button>
+        </form>
+
+        <div id="scan-bar" style="display:none; color:#00ff88; font-weight:bold; margin-top:10px;">
+        🔍 Scanning in progress...
+    </div>
+
+        {% if result %}
+            <div class="result-box">
+                <strong>Scan Summary</strong><br>
+                URL Scanned: {{ result.target }}<br>
+                Payloads Tested: {{ result.payloads_used }}<br>
+                Scan Time: {{ result.scan_time }}s<br>
+                Parameters Tested: {{ result.parameters_tested }}<br><br>
+
+                {% if result.vulnerabilities %}
+                    <strong>Vulnerabilities Found:</strong><br>
+                    {% for v in result.vulnerabilities %}
+                        🔥 {{ v.reason }} | {{ v.payload }} | severity: {{ v.severity }}<br>
+                    {% endfor %}
+                {% else %}
+                    ✅ No SQLi vulnerabilities detected.
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function(e) {
+            document.getElementById("scan-bar").style.display = "block";
+            setTimeout(() => form.submit(), 100); // allow time for DOM update
+            e.preventDefault(); // prevent default submit until delay ends
+        });
+    </script>
+
+</body>
+</html>

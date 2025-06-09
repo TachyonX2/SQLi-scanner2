@@ -1,0 +1,20 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Scan History</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Scan History</h2>
+        {% for item in history %}
+            <div class="result-box">
+                <strong>{{ item.timestamp }}</strong><br>
+                URL: {{ item.url }}<br>
+                Findings: {{ item.result.vulnerabilities | length }} vulnerabilities<br>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

